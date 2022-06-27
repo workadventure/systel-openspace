@@ -4136,7 +4136,7 @@
         {
          "name":"mapImage",
          "type":"string",
-         "value":"buero.png"
+         "value":"map.png"
         }, 
         {
          "name":"mapName",
