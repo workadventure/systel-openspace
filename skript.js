@@ -1,3 +1,7 @@
+import { bootstrapExtra } from "@workadventure/scripting-api-extra"
+console.log("Script started successfully")
+// end: mox scripting
+
 import { } from "https://unpkg.com/@workadventure/scripting-api-extra@^1";
 
 var currentPopup = undefined;
@@ -152,3 +156,93 @@ WA.room.onLeaveZone(zoneInformation, () =>{
         isCoWebSiteOpened = false;
     }
 })
+
+// start: mox scripting
+const buttons = [
+    {
+      label: "Reset",
+      className: "error",
+      callback: () =>
+        (WA.state.votePos = WA.state.voteNeg = WA.state.voteNeut = 0)
+    }
+  ]
+  
+  // Waiting for the API to be ready
+  WA.onInit()
+    .then(() => {
+      console.log("Scripting API ready")
+      console.log("Player tags: ", WA.player.tags)
+  
+      let website
+      WA.room.onEnterLayer("infoPopup").subscribe(() => {
+        openInfoWebsite().then(_website => (website = _website))
+      })
+  
+      WA.room.onLeaveLayer("infoPopup").subscribe(() => {
+        website.visible = false
+      })
+  
+      WA.room.onEnterLayer("votePos").subscribe(() => {
+        console.log("VotePos: ", WA.state.votePos)
+        WA.state.votePos++
+      })
+      WA.room.onLeaveLayer("votePos").subscribe(() => {
+        console.log("VotePos: ", WA.state.votePos)
+        if (WA.state.votePos === 0) return
+        WA.state.votePos--
+      })
+      WA.room.onEnterLayer("voteNeg").subscribe(() => {
+        console.log("voteNeg: ", WA.state.voteNeg)
+        WA.state.voteNeg++
+      })
+      WA.room.onLeaveLayer("voteNeg").subscribe(() => {
+        console.log("voteNeg: ", WA.state.voteNeg)
+        if (WA.state.voteNeg === 0) return
+        WA.state.voteNeg--
+      })
+      WA.room.onEnterLayer("voteNeut").subscribe(() => {
+        console.log("voteNeut: ", WA.state.voteNeut)
+        WA.state.voteNeut++
+      })
+      WA.room.onLeaveLayer("voteNeut").subscribe(() => {
+        console.log("voteNeut: ", WA.state.voteNeut)
+        if (WA.state.voteNeut === 0) return
+        WA.state.voteNeut--
+      })
+  
+      let voteResetPopup
+      WA.room.onEnterLayer("voteRes").subscribe(() => {
+        voteResetPopup = WA.ui.openPopup(
+          "resetPopup",
+          "Soll das Voting zurückgesetzt werden?",
+          buttons
+        )
+      })
+      WA.room.onLeaveLayer("voteRes").subscribe(() => {
+        voteResetPopup.close()
+      })
+  
+      // The line below bootstraps the Scripting API Extra library that adds a number of advanced properties/features to WorkAdventure
+      bootstrapExtra()
+        .then(() => {
+          console.log("Scripting API Extra ready")
+        })
+        .catch(e => console.error(e))
+    })
+    .catch(e => console.error(e))
+  
+  async function openInfoWebsite() {
+    return await WA.ui.website.open({
+      url: "https://tstosius.github.io/worktest/info.html",
+      position: {
+        vertical: "middle",
+        horizontal: "middle"
+      },
+      size: {
+        width: "50vh",
+        height: "50vh"
+      }
+    })
+  }
+  
+  export {}
