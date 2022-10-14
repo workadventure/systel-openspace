@@ -233,7 +233,7 @@ const buttons = [
   
   async function openInfoWebsite() {
     return await WA.ui.website.open({
-      url: "./info.html",
+      url: "https://tstosius.github.io/worktest/info.html",
       position: {
         vertical: "middle",
         horizontal: "middle"
