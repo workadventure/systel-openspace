@@ -1,7 +1,5 @@
 import { bootstrapExtra } from "@workadventure/scripting-api-extra"
-console.log("Script started successfully")
 bootstrapExtra();
-// end: mox scripting
 
 //import { } from "https://unpkg.com/@workadventure/scripting-api-extra@^1";
 
@@ -21,141 +19,118 @@ function closePopUp(){
 }
 
 var zoneFeedback = "feedback";
-var zoneTutorial = "tutorial";
+var zoneTutorial = "start-info";
 var zoneInfo = "info";
 var zoneInfoOrder = "info-order";
 var zoneTableTennis = "tabletennis";
-var zoneInformation = "information";
 
 var pongMsg = "Pong gegeneinander?\n\n1.Wählen Sie Online-Mehrspielermodus\n" +
 "2.Wählen Sie 'Beiläufig'\n3.Geben Sie eine Zimmernummer ein und klicken Sie auf 'Zimmer ändern'\n" +
 "4. Teilen Sie die Zimmernummer Ihrem Partner mit\n\n" +
 "Die Steuerung funktioniert mit den Pfeiltasten."
 
-WA.room.onEnterZone(zoneTutorial, () => {
-   currentPopup =  WA.ui.openPopup("popUpTutorial","Tutorial ansehen?",[
-        {
-            label: "OK",
-            callback: (popup => {
-                WA.nav.openTab(urlTutorial);
-                isCoWebSiteOpened = true;
-                closePopUp();
-            })
-        }]);
+WA.room.onEnterLayer(zoneTutorial).subscribe(() => {
+  currentPopup =  WA.ui.openPopup("popUpTutorial","Tutorial ansehen?",[
+  {
+    label: "OK",
+    callback: (popup => {
+      WA.nav.openTab(urlTutorial);
+      isCoWebSiteOpened = true;
+      closePopUp();
+    })
+  }]);
 })
 
-WA.room.onLeaveZone(zoneTutorial, () =>{
-    closePopUp();
+WA.room.onLeaveLayer(zoneTutorial).subscribe(() => {
+  closePopUp();
 
-    if (isCoWebSiteOpened) {
-        WA.nav.closeCoWebSite();
-        isCoWebSiteOpened = false;
-    }
+  if (isCoWebSiteOpened) {
+    WA.nav.closeCoWebSites();
+    isCoWebSiteOpened = false;
+  }
 })
 
-WA.room.onEnterZone(zoneFeedback, () => {
-   currentPopup =  WA.ui.openPopup("popUpFeedback","Hier kannst du Feedback abgeben.",[
-        {
-            label: "Feedback",
-            callback: (popup => {
-                WA.nav.openCoWebSite(urlFeedback);
-                isCoWebSiteOpened = true;
-                closePopUp();
-            })
-        }]);
+WA.room.onEnterLayer(zoneFeedback).subscribe(() => {
+  currentPopup =  WA.ui.openPopup("popUpFeedback","Hier kannst du Feedback abgeben.",[
+  {
+    label: "Feedback",
+    callback: (popup => {
+        WA.nav.openCoWebSite(urlFeedback);
+        isCoWebSiteOpened = true;
+        closePopUp();
+    })
+  }]);
 })
 
-WA.room.onLeaveZone(zoneFeedback, () =>{
-    closePopUp();
+WA.room.onLeaveLayer(zoneFeedback).subscribe(() => {
+  closePopUp();
 
-    if (isCoWebSiteOpened) {
-        WA.nav.closeCoWebSite();
-        isCoWebSiteOpened = false;
-    }
+  if (isCoWebSiteOpened) {
+    WA.nav.closeCoWebSites();
+    isCoWebSiteOpened = false;
+  }
 })
 
-WA.room.onEnterZone(zoneInfo, () => {
-   currentPopup =  WA.ui.openPopup("popUpInfo","Willkommen im EVS-Teambüro! Sprich uns gerne direkt an und komm bei uns vorbei! \n Mehr zu Workadventure auf ...",[
-        {
-            label: "DB Planet",
-            callback: (popup => {
-                WA.nav.openTab(urlInfo);
-                isCoWebSiteOpened = true;
-                closePopUp();
-            })
-        }]);
+WA.room.onEnterLayer(zoneInfo).subscribe(() => {
+  currentPopup =  WA.ui.openPopup("popUpInfo","Willkommen im EVS-Teambüro! Sprich uns gerne direkt an und komm bei uns vorbei! \n Mehr zu Workadventure auf ...",[
+  {
+    label: "DB Planet",
+    callback: (popup => {
+      WA.nav.openTab(urlInfo);
+      isCoWebSiteOpened = true;
+      closePopUp();
+    })
+  }]);
 })
 
-WA.room.onLeaveZone(zoneInfo, () =>{
-    closePopUp();
+WA.room.onLeaveLayer(zoneInfo).subscribe(() => {
+  closePopUp();
 
-    if (isCoWebSiteOpened) {
-        WA.nav.closeCoWebSite();
-        isCoWebSiteOpened = false;
-    }
+  if (isCoWebSiteOpened) {
+    WA.nav.closeCoWebSites();
+    isCoWebSiteOpened = false;
+  }
 })
 
-
-WA.room.onEnterZone(zoneInfoOrder, () => {
-   currentPopup =  WA.ui.openPopup("popUpInfoOrder","Ihr möchtet auch ein eigenes Teambüro mit kurzer Info zu euch? Hier könnt ihr dies beantragen.",[
-        {
-            label: "Digitalportal",
-            callback: (popup => {
-                WA.nav.openTab(urlInfoOrder);
-                isCoWebSiteOpened = true;
-                closePopUp();
-            })
-        }]);
+WA.room.onEnterLayer(zoneInfoOrder).subscribe(() => {
+  currentPopup =  WA.ui.openPopup("popUpInfoOrder","Ihr möchtet auch ein eigenes Teambüro mit kurzer Info zu euch? Hier könnt ihr dies beantragen.",[
+  {
+    label: "Digitalportal",
+    callback: (popup => {
+      WA.nav.openTab(urlInfoOrder);
+      isCoWebSiteOpened = true;
+      closePopUp();
+    })
+  }]);
 })
 
-WA.room.onLeaveZone(zoneInfoOrder, () =>{
-    closePopUp();
+WA.room.onLeaveLayer(zoneInfoOrder).subscribe(() => {
+  closePopUp();
 
-    if (isCoWebSiteOpened) {
-        WA.nav.closeCoWebSite();
-        isCoWebSiteOpened = false;
-    }
+  if (isCoWebSiteOpened) {
+    WA.nav.closeCoWebSites();
+    isCoWebSiteOpened = false;
+  }
 })
 
-
-WA.room.onEnterZone(zoneTableTennis, () => {
-   currentPopup =  WA.ui.openPopup("popUpTableTennis", pongMsg, [
-        {
-            label: "Verstanden",
-            callback: (popup => {
-                isCoWebSiteOpened = true;
-                closePopUp();
-            })
-        }]);
+WA.room.onEnterLayer(zoneTableTennis).subscribe(() => {
+  currentPopup =  WA.ui.openPopup("popUpTableTennis", pongMsg, [
+  {
+    label: "Verstanden",
+    callback: (popup => {
+      isCoWebSiteOpened = true;
+      closePopUp();
+    })
+  }]);
 })
 
-WA.room.onLeaveZone(zoneTableTennis, () =>{
-    closePopUp();
+WA.room.onLeaveLayer(zoneTableTennis).subscribe(() => {
+  closePopUp();
 
-    if (isCoWebSiteOpened) {
-        WA.nav.closeCoWebSite();
-        isCoWebSiteOpened = false;
-    }
-})
-
-WA.room.onEnterZone(zoneInformation, () => {
-   currentPopup =  WA.ui.openPopup("popUpInformation","Der Sommer ist da, schnapp dir ein Eis und besuche uns draußen vor dem Silberturm!\nLauf einfach in den Foyer und spring ins Portal in die DB Workadventure WorldTour!",[
-        {
-            label: "OK",
-            callback: (popup => {
-                isCoWebSiteOpened = true;
-                closePopUp();
-            })
-        }]);
-})
-
-WA.room.onLeaveZone(zoneInformation, () =>{
-    closePopUp();
-
-    if (isCoWebSiteOpened) {
-        WA.nav.closeCoWebSite();
-        isCoWebSiteOpened = false;
-    }
+  if (isCoWebSiteOpened) {
+    WA.nav.closeCoWebSites();
+    isCoWebSiteOpened = false;
+  }
 })
 
 // start: mox scripting
