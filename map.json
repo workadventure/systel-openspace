@@ -901,7 +901,7 @@
                 {
                  "name":"doorVariable",
                  "type":"string",
-                 "value":"door_b21"
+                 "value":"door_b2"
                 }, 
                 {
                  "name":"tag",
@@ -10648,7 +10648,7 @@
                  "class":"variable",
                  "height":0,
                  "id":43,
-                 "name":"door_b21",
+                 "name":"door_b2",
                  "point":true,
                  "properties":[
                         {
@@ -10862,11 +10862,6 @@
                          "name":"openSound",
                          "type":"string",
                          "value":"sigh_0.mp3"
-                        }, 
-                        {
-                         "name":"readableBy",
-                         "type":"string",
-                         "value":"admin"
                         }, 
                         {
                          "name":"soundRadius",
