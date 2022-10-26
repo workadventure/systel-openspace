@@ -1,8 +1,9 @@
 import { bootstrapExtra } from "@workadventure/scripting-api-extra"
 console.log("Script started successfully")
+bootstrapExtra();
 // end: mox scripting
 
-import { } from "https://unpkg.com/@workadventure/scripting-api-extra@^1";
+//import { } from "https://unpkg.com/@workadventure/scripting-api-extra@^1";
 
 var currentPopup = undefined;
 var isCoWebSiteOpened =  false;
