@@ -901,7 +901,7 @@
                 {
                  "name":"doorVariable",
                  "type":"string",
-                 "value":"door_b2"
+                 "value":"door_b21"
                 }, 
                 {
                  "name":"tag",
@@ -10648,7 +10648,7 @@
                  "class":"variable",
                  "height":0,
                  "id":43,
-                 "name":"door_b2",
+                 "name":"door_b21",
                  "point":true,
                  "properties":[
                         {
@@ -10680,11 +10680,6 @@
                          "name":"openLayer",
                          "type":"string",
                          "value":"opened_b2_door"
-                        }, 
-                        {
-                         "name":"readableBy",
-                         "type":"string",
-                         "value":"admin"
                         }],
                  "rotation":0,
                  "visible":true,
@@ -10728,11 +10723,6 @@
                          "name":"openLayer",
                          "type":"string",
                          "value":"opened_evs_door"
-                        }, 
-                        {
-                         "name":"readableBy",
-                         "type":"string",
-                         "value":"admin"
                         }],
                  "rotation":0,
                  "visible":true,
@@ -10776,11 +10766,6 @@
                          "name":"openLayer",
                          "type":"string",
                          "value":"opened_test_door"
-                        }, 
-                        {
-                         "name":"readableBy",
-                         "type":"string",
-                         "value":"admin"
                         }],
                  "rotation":0,
                  "visible":true,
@@ -10824,11 +10809,6 @@
                          "name":"openLayer",
                          "type":"string",
                          "value":"opened_door_bottom_left"
-                        }, 
-                        {
-                         "name":"readableBy",
-                         "type":"string",
-                         "value":"admin"
                         }],
                  "rotation":0,
                  "visible":true,
