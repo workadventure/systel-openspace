@@ -901,7 +901,7 @@
                 {
                  "name":"doorVariable",
                  "type":"string",
-                 "value":"door_b2"
+                 "value":"door_b21"
                 }, 
                 {
                  "name":"tag",
@@ -1021,7 +1021,7 @@
                 {
                  "name":"doorVariable",
                  "type":"string",
-                 "value":"door_b2"
+                 "value":"door_b21"
                 }],
          "type":"tilelayer",
          "visible":true,
@@ -10648,7 +10648,7 @@
                  "class":"variable",
                  "height":0,
                  "id":43,
-                 "name":"door_b2",
+                 "name":"door_b21",
                  "point":true,
                  "properties":[
                         {
@@ -11363,6 +11363,29 @@
                  "width":61.3333,
                  "x":2113.42335,
                  "y":2466.27865
+                }, 
+                {
+                 "class":"variable",
+                 "height":0,
+                 "id":131,
+                 "name":"test",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"default",
+                         "type":"string",
+                         "value":""
+                        }, 
+                        {
+                         "name":"label",
+                         "type":"string",
+                         "value":"test_var"
+                        }],
+                 "rotation":0,
+                 "visible":true,
+                 "width":0,
+                 "x":1711,
+                 "y":1348
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -11866,7 +11889,7 @@
          "y":0
         }],
  "nextlayerid":183,
- "nextobjectid":131,
+ "nextobjectid":132,
  "orientation":"orthogonal",
  "properties":[
         {
