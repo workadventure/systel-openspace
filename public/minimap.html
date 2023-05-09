@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minimap</title>
+    <style>
+      canvas {
+        width: 100%;
+        height: fit-content;
+      }
+    </style>
+    <script src="https://play.workadventu.re/iframe_api.js"></script>
+    <script src="https://unpkg.com/@workadventure/scripting-api-extra"></script>
+  </head>
+  <body>
+    <canvas id="myCanvas"></canvas>
+
+    <script>
+      let canvasId = "myCanvas";
+      let imagePath = "./map.png";
+      let firstColour = "#EC0016";
+      let secondColour = "#FFFFF0";
+      let windowMaxSwitch = 750;
+      let changingInterval = 700;
+      let startSize = 30;
+      let outerSize = startSize;
+      let innerSize = startSize / 2;
+      let maxSize = startSize * 2;
+
+      WA.onInit()
+        .then(async () => {
+          let pos = await WA.player.getPosition();
+          let imageObj = new Image();
+          imageObj.src = imagePath;
+
+          imageObj.onload = function (event) {
+            var c = document.getElementById(canvasId);
+            c.height = imageObj.height;
+            c.width = imageObj.width;
+
+            var ctx = c.getContext("2d");
+            ctx.drawImage(imageObj, 0, 0);
+
+            drawPoints(ctx, firstColour, secondColour, pos);
+
+            WA.player.onPlayerMove(async () => {
+              pos = await WA.player.getPosition();
+            });
+
+            setInterval(function () {
+              anDot(ctx, imageObj, pos);
+            }, changingInterval);
+          };
+        })
+        .catch((e) => console.error(e));
+
+      let switchBool = false;
+
+      function anDot(ctx, imageObj, pos) {
+        ctx.clearRect(0, 0, c.width, c.height);
+        ctx.drawImage(imageObj, 0, 0);
+        if (window.innerWidth < windowMaxSwitch) {
+          outerSize = maxSize;
+          innerSize = maxSize / 2;
+        } else {
+          outerSize = startSize;
+          innerSize = startSize / 2;
+        }
+        if (switchBool) {
+          drawPoints(ctx, firstColour, secondColour, pos);
+          switchBool = false;
+        } else {
+          drawPoints(ctx, secondColour, firstColour, pos);
+          switchBool = true;
+        }
+      }
+
+      function drawPoints(context, firstColor, secColor, pos) {
+        context.beginPath();
+        context.fillStyle = firstColor;
+        context.arc(pos.x, pos.y, outerSize, 0, Math.PI * 2, true);
+        context.fill();
+        context.beginPath();
+        context.fillStyle = secColor;
+        context.arc(pos.x, pos.y, innerSize, 0, Math.PI * 2, true);
+        context.fill();
+      }
+    </script>
+  </body>
+</html>
