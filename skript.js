@@ -237,4 +237,21 @@ const buttons = [
             }
         })
 
-  export {}
+/*
+ *  Lobster's functions
+ */
+
+var layerWarpCortyard = "lobster/warp_courtyard_exit";
+var layerWarpGarden = "lobster/warp_garden_exit";
+var urlWarpToGarden = "db/buero#lobster/warp_garden_entry";
+var urlWarpToCourtyard = "db/buero#lobster/warp_courtyard_entry";
+
+WA.room.onEnterLayer(layerWarpCortyard).subscribe(() => {
+  WA.nav.goToRoom(urlWarpToGarden);
+})
+
+WA.room.onEnterLayer(layerWarpGarden).subscribe(() => {
+  WA.nav.goToRoom(urlWarpToCourtyard);
+})
+
+export {}
