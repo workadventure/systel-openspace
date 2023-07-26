@@ -1990,6 +1990,11 @@
                  "value":"{{{ table-tennis }}}"
                 }, 
                 {
+                 "name":"openWebsiteTrigger",
+                 "type":"string",
+                 "value":"onicon"
+                }, 
+                {
                  "name":"zone",
                  "type":"string",
                  "value":"tabletennis"
@@ -8786,6 +8791,11 @@
                          "name":"jitsiRoomAdminTag",
                          "type":"string",
                          "value":"moderator"
+                        }, 
+                        {
+                         "name":"jitsiTrigger",
+                         "type":"string",
+                         "value":"onaction"
                         }],
                  "rotation":0,
                  "type":"area",
