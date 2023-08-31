@@ -16859,7 +16859,7 @@
         {
          "columns":25,
          "firstgid":57802,
-         "image":"..\/..\/silberturm-neu\/buero-testing\/tilesets\/WA_Exterior.png",
+         "image":"..\/tilesets\/WA_Exterior.png",
          "imageheight":1088,
          "imagewidth":800,
          "margin":0,
