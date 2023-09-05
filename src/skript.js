@@ -223,19 +223,26 @@ const buttons = [
   }
   
   WA.ui.actionBar.addButton({
-            id:"minimap",
-            type:"action",
-            imageSrc:"https://buenni86.github.io/systel-openspace/map_logo.png",
-            toolTip:"Minimap",
-            callback: async () => {
-				if (currentWebsite !== undefined) {
-                    currentWebsite.close();
-                    currentWebsite = undefined;
-                } else {
-                    currentWebsite = await WA.nav.openCoWebSite("../minimap.html",true);
-                }
-            }
-        })
+	  id:"minimap",
+	  type:"action",
+	  imageSrc:"https://buenni86.github.io/systel-openspace/map_logo.png",
+	  toolTip:"Minimap",
+	  callback: async () => {
+		  if (currentWebsite !== undefined) {
+			  currentWebsite.close();
+			  currentWebsite = undefined;
+			  } else {
+				  //currentWebsite = await WA.nav.openCoWebSite("../minimap.html",true);
+				  WA.ui.modal.openModal({
+					title: "Minimap",
+					src: 'https://buenni86.github.io/systel-openspace/minimap.html',
+					allow: "fullscreen",
+					allowApi: true,
+					position: "right",
+				});
+				}
+			}
+	})
 
 /*
  *  Lobster's functions
