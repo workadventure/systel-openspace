@@ -7635,6 +7635,12 @@
                 }],
          "name":"configuration",
          "opacity":1,
+         "properties":[
+                {
+                 "name":"tag",
+                 "type":"string",
+                 "value":"admin"
+                }],
          "type":"group",
          "visible":true,
          "x":0,
@@ -10192,7 +10198,7 @@
          "value":"..\/src\/skript.js"
         }],
  "renderorder":"right-down",
- "tiledversion":"1.10.1",
+ "tiledversion":"1.10.2",
  "tileheight":32,
  "tilesets":[
         {
