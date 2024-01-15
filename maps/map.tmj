@@ -10315,7 +10315,7 @@
          "height":120,
          "id":153,
          "name":"silent",
-         "opacity":0.23,
+         "opacity":0,
          "properties":[
                 {
                  "name":"silent",
