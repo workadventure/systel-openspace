@@ -5877,6 +5877,16 @@
                          "name":"jitsiRoomAdminTag",
                          "type":"string",
                          "value":"moderator"
+                        }, 
+                        {
+                         "name":"jitsiTrigger",
+                         "type":"string",
+                         "value":"onaction"
+                        }, 
+                        {
+                         "name":"jitsiTriggerMessage",
+                         "type":"string",
+                         "value":"LEERTASTE dr\u00fccken um beizutreten"
                         }],
                  "rotation":0,
                  "type":"area",
@@ -5904,6 +5914,16 @@
                          "name":"jitsiRoomAdminTag",
                          "type":"string",
                          "value":"moderator"
+                        }, 
+                        {
+                         "name":"jitsiTrigger",
+                         "type":"string",
+                         "value":"onaction"
+                        }, 
+                        {
+                         "name":"jitsiTriggerMessage",
+                         "type":"string",
+                         "value":"LEERTASTE dr\u00fccken um beizutreten"
                         }],
                  "rotation":0,
                  "type":"area",
@@ -5931,6 +5951,16 @@
                          "name":"jitsiRoomAdminTag",
                          "type":"string",
                          "value":"moderator"
+                        }, 
+                        {
+                         "name":"jitsiTrigger",
+                         "type":"string",
+                         "value":"onaction"
+                        }, 
+                        {
+                         "name":"jitsiTriggerMessage",
+                         "type":"string",
+                         "value":"LEERTASTE dr\u00fccken um beizutreten"
                         }],
                  "rotation":0,
                  "type":"area",
@@ -5958,6 +5988,16 @@
                          "name":"jitsiRoomAdminTag",
                          "type":"string",
                          "value":"moderator"
+                        }, 
+                        {
+                         "name":"jitsiTrigger",
+                         "type":"string",
+                         "value":"onaction"
+                        }, 
+                        {
+                         "name":"jitsiTriggerMessage",
+                         "type":"string",
+                         "value":"LEERTASTE dr\u00fccken um beizutreten"
                         }],
                  "rotation":0,
                  "type":"area",
