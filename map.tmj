@@ -5583,6 +5583,105 @@
                  "width":223.337333333333,
                  "x":2727.998,
                  "y":1163.50033333333
+                }, 
+                {
+                 "height":112.666666666667,
+                 "id":124,
+                 "name":"mds_dmp_Billard",
+                 "properties":[
+                        {
+                         "name":"jitsiConfig",
+                         "type":"string",
+                         "value":"{ \"startWithVideoMuted\": true, \"startWithAudioMuted\": false, \"liveStreamingEnabled\": false, \"fileRecordingsEnabled\": false, \"disableDeepLinking\": true, \"etherpad_base\": null,\"breakoutRooms\" : {\n\n\"hideAddRoomButton\": true,\n\n\"hideJoinRoomButton\": true\n\n}, \"toolbarButtons\": [ \"camera\",\"chat\",\"closedcaptions\",\"desktop\",\"download\",\"filmstrip\",\"fullscreen\",\"noisesuppression\",\"hangup\",\"help\",\"microphone\",\"mute-everyone\",\"mute-video-everyone\",\"participants-pane\",\"profile\",\"raisehand\",\"select-background\",\"settings\",\"shareaudio\",\"sharedvideo\",\"shortcuts\",\"tileview\",\"toggle-camera\",\"videoquality\",\"__end\"] }"
+                        }, 
+                        {
+                         "name":"jitsiRoom",
+                         "type":"string",
+                         "value":"MDS Billard"
+                        }, 
+                        {
+                         "name":"jitsiRoomAdminTag",
+                         "type":"string",
+                         "value":"moderator"
+                        }, 
+                        {
+                         "name":"jitsiTrigger",
+                         "type":"string",
+                         "value":"onaction"
+                        }, 
+                        {
+                         "name":"jitsiTriggerMessage",
+                         "type":"string",
+                         "value":"LEERTASTE dr\u00fccken, um beizutreten"
+                        }, 
+                        {
+                         "name":"openWebsite",
+                         "type":"string",
+                         "value":"https:\/\/gamesnacks.com\/games\/billiardsclassic"
+                        }, 
+                        {
+                         "name":"openWebsiteClosable",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"openWebsiteTrigger",
+                         "type":"string",
+                         "value":"onaction"
+                        }, 
+                        {
+                         "name":"openWebsiteTriggerMessage",
+                         "type":"string",
+                         "value":"LEERTASTE dr\u00fccken, um beizutreten"
+                        }, 
+                        {
+                         "name":"openWebsiteWidth",
+                         "type":"string",
+                         "value":"40"
+                        }],
+                 "rotation":0,
+                 "type":"area",
+                 "visible":true,
+                 "width":138.666666666667,
+                 "x":2474.66666666667,
+                 "y":1134.66666666667
+                }, 
+                {
+                 "height":112.667,
+                 "id":125,
+                 "name":"wa_db_Billard",
+                 "properties":[
+                        {
+                         "name":"openWebsite",
+                         "type":"string",
+                         "value":"{{{ billardWebsite }}}"
+                        }, 
+                        {
+                         "name":"openWebsiteClosable",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"openWebsiteTrigger",
+                         "type":"string",
+                         "value":"onaction"
+                        }, 
+                        {
+                         "name":"openWebsiteTriggerMessage",
+                         "type":"string",
+                         "value":"Leertaste dr\u00fccken, um beizutreten"
+                        }, 
+                        {
+                         "name":"openWebsiteWidth",
+                         "type":"string",
+                         "value":"40"
+                        }],
+                 "rotation":0,
+                 "type":"area",
+                 "visible":true,
+                 "width":138.667,
+                 "x":1706.99983333333,
+                 "y":1643.6665
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -5911,17 +6010,6 @@
                 }, 
                 {
                  "draworder":"topdown",
-                 "id":119,
-                 "name":"npcs",
-                 "objects":[],
-                 "opacity":1,
-                 "type":"objectgroup",
-                 "visible":true,
-                 "x":0,
-                 "y":0
-                }, 
-                {
-                 "draworder":"topdown",
                  "id":10,
                  "name":"elevators",
                  "objects":[
@@ -6055,7 +6143,35 @@
                  "draworder":"topdown",
                  "id":66,
                  "name":"configObjects",
-                 "objects":[],
+                 "objects":[
+                        {
+                         "height":0,
+                         "id":127,
+                         "name":"billardWebsite",
+                         "point":true,
+                         "properties":[
+                                {
+                                 "name":"default",
+                                 "type":"string",
+                                 "value":"https:\/\/gamesnacks.com\/games\/billiardsclassic"
+                                }, 
+                                {
+                                 "name":"label",
+                                 "type":"string",
+                                 "value":"Billard Website"
+                                }, 
+                                {
+                                 "name":"persist",
+                                 "type":"bool",
+                                 "value":true
+                                }],
+                         "rotation":0,
+                         "type":"variable",
+                         "visible":true,
+                         "width":0,
+                         "x":1778,
+                         "y":1693.33
+                        }],
                  "opacity":1,
                  "properties":[
                         {
@@ -9916,7 +10032,7 @@
          "y":0
         }],
  "nextlayerid":186,
- "nextobjectid":124,
+ "nextobjectid":128,
  "orientation":"orthogonal",
  "properties":[
         {
