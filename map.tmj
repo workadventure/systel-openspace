@@ -5809,6 +5809,11 @@
                          "value":true
                         }, 
                         {
+                         "name":"openWebsitePolicy",
+                         "type":"string",
+                         "value":"camera;microphone;fullscreen;screen-wake-lock;autoplay;"
+                        }, 
+                        {
                          "name":"openWebsiteTrigger",
                          "type":"string",
                          "value":"onaction"
